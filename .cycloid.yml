@@ -1,0 +1,24 @@
+# Configuration of the CI pipeline
+name: 'Mysql and Oracle for Flexible Engine'
+canonical: 'mysql'
+description: 'Stack which will help us to deploy a FE ECS using terraform'
+keywords:
+  - 'FE'
+  - 'terraform'
+  - 'concourse'
+  - 'Database oracle and mysql'
+technologies:
+  - technology: FE
+  - version: n/a
+author: 'Mohit Vohra'
+image: 'https://raw.githubusercontent.com/cycloid-community-catalog/docs-step-by-step-stack/stacks/icon.png'
+type: 'stack'
+config:
+  # configuration of the CI pipeline
+  pipeline:
+    pipeline:
+      path: 'pipeline/pipeline.yml'
+
+    variables:
+      path: 'pipeline/variables.sample.yml'
+      destination: '($ project $)/terraform/($ environment $)/pipleline_var.yml'

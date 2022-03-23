@@ -1,0 +1,167 @@
+---
+default:
+  pipeline:
+    Git:
+      - name: "Config repository"
+        key: git_repo
+        type: string
+        widget: cy_crs
+        description: "The config repository to save configurations"
+        default: "git@github.com:mvohra447/terraform-vcd-1.git"
+        required: true
+      - name: "Config repository credentials"
+        key: git_key
+        type: string
+        widget: cy_cred
+        default: "((git_git_mohit_ssh.ssh_key))"
+        required: true
+      - name: "Config repository branch"
+        key: git_branch
+        widget: cy_branch
+        type: string
+        description: "The branch used by the config repository"
+        source: git_repo
+        default: "config"
+        required: true
+      - name: "Config repository path"
+        key: config_terraform_path_form
+        widget: simple_text
+        type: string
+        description: "The path in which the config will be saved"
+        default: ($ project $)/terraform/
+        required: true
+        
+    FE_PROVIDER:
+      - name: "Domain Name"
+        key: fe_domain_name
+        widget: simple_text
+        type: string
+        description: "Domain name of the tenant"
+        default: "OCB0001659"
+        required: true
+      - name: "Username"
+        key: fe_username
+        widget: cy_cred
+        type: string
+        description: "Username for flexible engine"
+        default: "((custom_mohit-fe-details.name))"
+        required: true 
+      - name: "Password"
+        key: fe_password
+        widget: cy_cred
+        type: string
+        description: "Password for flexible engine"
+        default: "((custom_mohit-fe-details.login))"
+        required: true
+      - name: "Authentication api path"
+        key: auth_url
+        widget: simple_text
+        type: string
+        description: "Flexible engine api path"
+        default: "https://iam.eu-west-0.prod-cloud-ocb.orange-business.com/v3"
+        required: true
+      - name: "Default Region"
+        key: fe_default_region
+        type: string
+        widget: dropdown
+        description: "In which region you would like the resource to be created"
+        default: "eu-west-0"
+        values: ["eu-west-0", "na-east-0", "eu-west-1"]
+        required: true
+    VPC:
+      - name: "VPC Name"
+        key: vpc_name
+        widget: simple_text
+        type: string
+        description: "Only use when creating new VPC"
+        default: "NA"
+        required: true
+      - name: "CIDR"
+        key: cidr
+        widget: simple_text
+        type: string
+        description: "CIDR Value"
+        default: "NA"
+        required: true
+    ECS:
+      - name: "ECS Name"
+        key: ecs_name
+        widget: simple_text
+        type: string
+        description: "ECS Name"
+        default: "<Enter ECS Name>"
+        required: true
+      - name: "Image ID"
+        key: os_images
+        type: string
+        widget: simple_text
+        description: "Choose an Image ID"
+        default: "d0321b1f-bff2-4493-916f-ba968d07593a"
+        required: true
+      - name: "Flavor and resources"
+        key: ecs_flavor
+        widget: dropdown
+        type: string
+        description: "Choose a flavor Id"
+        values: ["t2.small", "t2.micro", "t2.large.2","s3.4xlarge.2"]
+        default: "s3.4xlarge.2"
+        required: true
+      - name: "Key pair"
+        key: fe_keypair
+        widget: simple_text
+        type: string
+        description: "Key pair credentials"
+        default: "mohit"
+        required: true
+      - name: "ECS Security group"
+        key: ecs_secgroup
+        widget: simple_text
+        type: string
+        description: "Enter security group list"
+        default: "default"
+        required: true     
+      - name: "Select VPC for this ECS"
+        key: ecs_vpc
+        widget: dropdown
+        type: string
+        description: "Choose a vpc id"
+        values: [ "vpc-mohit:@1b851e33-4a74-4279-a37b-2fc8921d09f7", "default-vpc@1fd7a904-2367-4a43-ae49-1351588387d6", "gabis-vpc-4ca5@1f31cf1e-c5cd-4e0d-8a71-26b5159de543"]
+        default: "default-vpc@1fd7a904-2367-4a43-ae49-1351588387d6"
+        required: true
+    SECURITY_GRP:
+      - name: "Security Group Name"
+        key: secgrp_name
+        widget: simple_text
+        type: string
+        description: "Security group name"
+        default: "NA"
+        required: true
+      - name: "Security group region"
+        key: secgrp_region
+        widget: simple_text
+        type: string
+        description: "Security group region"
+        default: ""
+        required: false
+      - name: "Security group TenantId"
+        key: secgrp_tenantid
+        widget: simple_text
+        type: string
+        description: "Security group TenantId"
+        default: ""
+        required: false
+      - name: "Security group description"
+        key: secgrp_desc
+        widget: simple_text
+        type: string
+        description: "Security group description"
+        default: "describe"
+        required: false
+      - name: "Add security group"
+        key: secgrp_add
+        description: "Do you want to add this security group to ECS, if created?"
+        type: string
+        default: "true"
+        widget: dropdown
+        values: ["true", "false"]
+        required: true
