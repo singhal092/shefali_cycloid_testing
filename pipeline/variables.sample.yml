@@ -1,0 +1,25 @@
+env: ($ environment $)
+project: ($ project $)
+customer: ($ organization_canonical $)
+
+config_terraform_path_form: ($ project $)/terraform/
+git_key:
+git_repo:
+fe_domain_name: 
+fe_username:
+fe_password:
+auth_url:
+fe_default_region:
+vpc_name:
+cidr:
+ecs_name:
+os_images:
+ecs_flavor:
+fe_keypair:
+ecs_secgroup:
+ecs_vpc:
+secgrp_name:
+secgrp_region:
+secgrp_tenantid:
+secgrp_desc:
+secgrp_add:
