@@ -1,6 +1,6 @@
 # Configuration of the CI pipeline
-name: 'Mysql first stack'
-canonical: 'mysql first stack'
+name: 'Mysql-stack'
+canonical: 'mysql-stack'
 description: 'Stack which will help us to deploy a FE ECS using terraform'
 keywords:
   - 'FE'
