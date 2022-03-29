@@ -1,6 +1,6 @@
 # Configuration of the CI pipeline
-name: 'Mysql and Oracle for Flexible Engine'
-canonical: 'mysql'
+name: 'Mysql first stack'
+canonical: 'mysql first stack'
 description: 'Stack which will help us to deploy a FE ECS using terraform'
 keywords:
   - 'FE'
@@ -10,7 +10,7 @@ keywords:
 technologies:
   - technology: FE
   - version: n/a
-author: 'Mohit Vohra'
+author: 'Shefali Singhal'
 image: 'https://raw.githubusercontent.com/cycloid-community-catalog/docs-step-by-step-stack/stacks/icon.png'
 type: 'stack'
 config:
