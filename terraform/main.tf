@@ -7,7 +7,7 @@ zone = "us-central1-a"
 }
 
 resource "google_compute_instance" "default" {
-  name         = "testshefali"
+  name         = "test01shefali"
   machine_type = "f1-micro"
   zone         = "us-central1-a"
   desired_status = "RUNNING"
