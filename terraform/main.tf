@@ -6,7 +6,7 @@ region = "us-central1"
 zone = "us-central1-a"
 }
 
-resource "google_compute_instance" "instance" {
+resource "google_compute_instance" "default" {
   name         = "testshefali"
   machine_type = "f1-micro"
   zone         = "us-central1-a"
@@ -15,7 +15,7 @@ resource "google_compute_instance" "instance" {
 
   boot_disk {
     initialize_params {
-      image = "centos-cloud/centos-7"
+      image = "ubuntu-1604-xenial-v20201014"
     }
   }
 
