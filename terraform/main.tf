@@ -10,7 +10,7 @@ resource "google_compute_instance" "default" {
   name         = "test01shefali"
   machine_type = "f1-micro"
   zone         = "us-central1-a"
-  desired_status = "TERMINATED"
+  desired_status = "RUNNING"
 
 
   boot_disk {
