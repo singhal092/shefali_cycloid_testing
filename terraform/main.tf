@@ -1,6 +1,6 @@
 provider "google" {
 version = "3.11.0"
-credentials = "${file("shefali.json")}"
+credentials = file("shefali.json")
 project = "mohit-2022"
 region = "us-central1"
 zone = "us-central1-a"
