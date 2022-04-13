@@ -1,6 +1,6 @@
 terraform {
     backend "gcs" {
-         credentials = file("shefali.json")
+         credentials = "shefali.json"
          bucket      = "shefalitestbucket"
          prefix      = "VmOnOff"
     }
