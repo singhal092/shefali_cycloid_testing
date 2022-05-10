@@ -1,0 +1,9 @@
+module "tf-deepak-testing" {
+  source = "module-deepak-testing"
+
+  # env - type: string
+  # env = "[PLACEHOLDER]"
+
+  # project - type: string
+  # project = "[PLACEHOLDER]"
+}

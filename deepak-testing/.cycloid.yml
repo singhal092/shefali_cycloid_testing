@@ -22,3 +22,7 @@ config:
       variables:
         destination: ($ project $)/pipeline/variables-($ environment $).yml
         path: pipeline/default/variables.sample.yaml
+    terraform:
+      deepak-testing:
+        destination: ($ project $)/terraform/($ environment $)/deepak-testing.tf
+        path: terraform/default/deepak-testing.tf.sample
